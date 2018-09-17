@@ -1,5 +1,6 @@
 package br.com.senaijandira.mybooks;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -28,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
         //criar um livro fake
 
         livros = new Livro[]{
-                new Livro(1, Utils.toByteArray(getResources(),R.drawable.pequeno_principe),"O pequeno Principe", getString(R.string.pequeno_principe)),
+                /*new Livro(1, Utils.toByteArray(getResources(),R.drawable.pequeno_principe),"O pequeno Principe", getString(R.string.pequeno_principe)),
                 new Livro(2, Utils.toByteArray(getResources(),R.drawable.cinquenta_tons_cinza),"50 tons de cinza", getString(R.string.pequeno_principe)),
-                new Livro(3, Utils.toByteArray(getResources(),R.drawable.kotlin_android),"Kotlin com android", getString(R.string.pequeno_principe)),
+                new Livro(3, Utils.toByteArray(getResources(),R.drawable.kotlin_android),"Kotlin com android", getString(R.string.pequeno_principe)),*/
                
         };
 
@@ -62,6 +63,11 @@ public class MainActivity extends AppCompatActivity {
 
         //exibir na tela
         root.addView(v);
+
+    }
+    public void  abrirCadastro(View v){
+        startActivity(new Intent(this,cadastro_Activity.class));
+
 
     }
 }
