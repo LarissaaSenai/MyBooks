@@ -2,21 +2,20 @@ package br.com.senaijandira.mybooks;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.arch.persistence.room.Room;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.renderscript.ScriptGroup;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.io.InputStream;
-import java.util.Arrays;
 
+import br.com.senaijandira.mybooks.db.MyBooksDatabase;
 import br.com.senaijandira.mybooks.model.Livro;
 
 public class cadastro_Activity extends AppCompatActivity {
@@ -30,10 +29,19 @@ public class cadastro_Activity extends AppCompatActivity {
 
     private final int COD_REQ_GALERIA = 101;
 
+    private MyBooksDatabase mybooksDb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_);
+
+        //criando a instancia do banco de dados
+        mybooksDb = Room.databaseBuilder(getApplicationContext(),MyBooksDatabase.class,Utils.DATABASE_NAME)
+                .fallbackToDestructiveMigration()
+                .allowMainThreadQueries()
+                .build();
+
         imgLivroCapa = findViewById(R.id.imgLivroCapa);
         txtTitulo = findViewById(R.id.txtTitulo);
         txtDescricao = findViewById(R.id.txtDescricao);
@@ -88,11 +96,14 @@ public class cadastro_Activity extends AppCompatActivity {
         Livro livro = new Livro (0, capa, titulo, descricao);
 
         // inserir na variável estática da MainActivity
-        int tamanhoArray = MainActivity.livros.length;
+       /* int tamanhoArray = MainActivity.livros.length;
 
-        MainActivity.livros= Arrays.copyOf(MainActivity.livros, tamanhoArray+1);
+          MainActivity.livros= Arrays.copyOf(MainActivity.livros, tamanhoArray+1);
 
-        MainActivity.livros[tamanhoArray] = livro;
+          MainActivity.livros[tamanhoArray] = livro;*/
+
+       //inserir no banco de dados
+       mybooksDb.daoLivro().inserir(livro);
 
         if (txtDescricao.getText().toString().trim().equals("")|| txtTitulo.getText().toString().trim().equals("")){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
