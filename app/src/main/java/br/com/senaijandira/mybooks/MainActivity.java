@@ -2,11 +2,12 @@ package br.com.senaijandira.mybooks;
 
 import android.arch.persistence.room.Room;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
     //variavel de acesso ao banco
     private MyBooksDatabase myBooksDb;
+    Button btnlidos;
+    Button btnleu;
+
 
 
 
@@ -35,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         listaLivros = findViewById(R.id.listaLivros);
+
+
+        myBooksDb = Room.databaseBuilder(getApplicationContext(),MyBooksDatabase.class, Utils.DATABASE_NAME)
+                .fallbackToDestructiveMigration()
+                .allowMainThreadQueries()
+                .build();
+
+
 
         //criar um livro fake
 

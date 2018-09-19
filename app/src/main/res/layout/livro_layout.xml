@@ -15,11 +15,11 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/imgLivroCapa"
                 android:layout_width="100dp"
                 android:layout_height="150dp"
                 android:layout_marginRight="15dp"
-                android:id="@+id/imgLivroCapa"
-                android:src="@drawable/pequeno_principe"/>
+                android:src="@drawable/pequeno_principe" />
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -43,13 +43,33 @@
                     android:layout_height="wrap_content"
                     android:text="@string/pequeno_principe"
                     />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Leu"
+                    android:id="@+id/btnleu"
 
+                    />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ler"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/btnler"
+
+                    />
+                </LinearLayout>
             </LinearLayout>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/baseline_delete_black_18dp"
-                android:id="@+id/imgDeleteLivro"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_delete_black_18dp"
+                    android:id="@+id/imgDeleteLivro"/>
+
         </LinearLayout>
 
 

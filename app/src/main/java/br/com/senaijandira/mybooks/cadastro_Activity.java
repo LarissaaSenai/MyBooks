@@ -50,6 +50,7 @@ public class cadastro_Activity extends AppCompatActivity {
 
 
 
+
     }
 
     public void abrirGaleria(View view) {
