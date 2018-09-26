@@ -3,6 +3,8 @@ package br.com.senaijandira.mybooks;
 import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,17 +18,22 @@ import br.com.senaijandira.mybooks.db.MyBooksDatabase;
 import br.com.senaijandira.mybooks.model.Livro;
 
 public class MainActivity extends AppCompatActivity {
+    Button btnLeu;
+    Button btnLer;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+        super.onCreate(savedInstanceState, persistentState);
+
+        btnLer = findViewById(R.id.btnLer);
+        btnLeu = findViewById(R.id.btnLeu);
+    }
 
     LinearLayout listaLivros;
     public static Livro[] livros;
 
     //variavel de acesso ao banco
     private MyBooksDatabase myBooksDb;
-    Button btnlidos;
-    Button btnleu;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

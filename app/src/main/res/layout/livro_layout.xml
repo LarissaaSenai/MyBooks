@@ -50,7 +50,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Leu"
-                    android:id="@+id/btnleu"
+                    android:id="@+id/btnLeu"
+                    android:onClick="abrirLivrosLidos"
 
                     />
                 <Button
@@ -58,7 +59,8 @@
                     android:layout_height="wrap_content"
                     android:text="Ler"
                     android:layout_marginLeft="10dp"
-                    android:id="@+id/btnler"
+                    android:id="@+id/btnLer"
+                    android:onClick="AbrirLivrosLer"
 
                     />
                 </LinearLayout>
@@ -69,6 +71,12 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/baseline_delete_black_18dp"
                     android:id="@+id/imgDeleteLivro"/>
+
+            <ImageView
+                android:id="@+id/imgEditarLivro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/editar32" />
 
         </LinearLayout>
 

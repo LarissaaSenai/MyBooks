@@ -109,17 +109,17 @@ public class cadastro_Activity extends AppCompatActivity {
         if (txtDescricao.getText().toString().trim().equals("")|| txtTitulo.getText().toString().trim().equals("")){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             //define o titulo
-            builder.setTitle("Fracasso");
+            builder.setTitle("Não foi possivel");
             //define a mensagem
-            builder.setMessage("Seu Lixo");
+            builder.setMessage("Erro");
             //define um botão como positivo
-            builder.setPositiveButton("Positivo", new DialogInterface.OnClickListener() {
+            builder.setPositiveButton("confirmar", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface arg0, int arg1) {
 
                 }
             });
             //define um botão como negativo.
-            builder.setNegativeButton("Negativo", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface arg0, int arg1) {
 
                 }
@@ -131,11 +131,11 @@ public class cadastro_Activity extends AppCompatActivity {
         }else{
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             //define o titulo
-            builder.setTitle("Sucesso");
+            builder.setTitle("Salvo");
             //define a mensagem
-            builder.setMessage("parabens cara!");
+            builder.setMessage("Livro Salvo com Sucesso!");
             //define um botão como positivo
-            builder.setPositiveButton("Positivo", new DialogInterface.OnClickListener() {
+            builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface arg0, int arg1) {
 
                 }

@@ -1,11 +1,14 @@
 package br.com.senaijandira.mybooks.model;
 
+import android.app.Activity;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity
-public class Livro {
+public class Livro extends Activity{
+
+
 
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -29,7 +32,6 @@ public class Livro {
 
 
     }
-
 
     public int getId() {
         return id;
