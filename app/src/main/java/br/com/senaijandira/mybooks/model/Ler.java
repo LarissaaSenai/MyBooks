@@ -1,4 +1,7 @@
 package br.com.senaijandira.mybooks.model;
 
-public class Ler {
+import android.app.Activity;
+
+public class Ler extends Activity {
+
 }

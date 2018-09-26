@@ -60,7 +60,7 @@
                     android:text="Ler"
                     android:layout_marginLeft="10dp"
                     android:id="@+id/btnLer"
-                    android:onClick="AbrirLivrosLer"
+
 
                     />
                 </LinearLayout>

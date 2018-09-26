@@ -21,12 +21,14 @@ public class MainActivity extends AppCompatActivity {
     Button btnLeu;
     Button btnLer;
 
+    MyBooksDatabase BooksDb;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
 
-        btnLer = findViewById(R.id.btnLer);
-        btnLeu = findViewById(R.id.btnLeu);
+        btnLer = findViewById(R.id.btnler);
+        btnLeu = findViewById(R.id.btnleu);
     }
 
     LinearLayout listaLivros;
@@ -48,20 +50,19 @@ public class MainActivity extends AppCompatActivity {
         listaLivros = findViewById(R.id.listaLivros);
 
 
-        myBooksDb = Room.databaseBuilder(getApplicationContext(),MyBooksDatabase.class, Utils.DATABASE_NAME)
-                .fallbackToDestructiveMigration()
-                .allowMainThreadQueries()
-                .build();
+
 
 
 
         //criar um livro fake
 
         livros = new Livro[]{
-                /*new Livro(1, Utils.toByteArray(getResources(),R.drawable.pequeno_principe),"O pequeno Principe", getString(R.string.pequeno_principe)),
+                new Livro(1, Utils.toByteArray(getResources(),R.drawable.pequeno_principe),"O pequeno Principe", getString(R.string.pequeno_principe)),
                 new Livro(2, Utils.toByteArray(getResources(),R.drawable.cinquenta_tons_cinza),"50 tons de cinza", getString(R.string.pequeno_principe)),
-                new Livro(3, Utils.toByteArray(getResources(),R.drawable.kotlin_android),"Kotlin com android", getString(R.string.pequeno_principe)),*/
-               
+                new Livro(3, Utils.toByteArray(getResources(),R.drawable.kotlin_android),"Kotlin com android", getString(R.string.pequeno_principe)),
+
+
+
         };
 
     }

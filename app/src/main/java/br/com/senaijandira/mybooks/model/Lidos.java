@@ -1,4 +1,6 @@
 package br.com.senaijandira.mybooks.model;
 
-public class Lidos {
+import android.app.Activity;
+
+public class Lidos extends Activity{
 }
